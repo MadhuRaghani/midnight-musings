@@ -1,0 +1,15 @@
+.footer {
+  padding: 1rem 0.5rem;
+  border-top-right-radius: 1rem;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+/* .footer a {
+  color: var(--black-color);
+} */
+
+.footer-icons {
+  height: 2em;
+  width: 2em;
+}

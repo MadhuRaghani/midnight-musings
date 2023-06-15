@@ -1,1 +1,3 @@
 /* import all individual page css over here */
+@import url("../pages/home/Home.css");
+@import url("../components/footer/Footer.css");
