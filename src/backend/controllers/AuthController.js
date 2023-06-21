@@ -1,7 +1,7 @@
 import { v4 as uuid } from 'uuid';
 import { Response } from 'miragejs';
 import { formatDate } from '../utils/authUtils';
-import sign from 'jwt-encode';
+const sign = require('jwt-encode');
 
 /**
  * All the routes related to Auth are present here.
@@ -44,7 +44,7 @@ export const signupHandler = function (schema, request) {
     const createdUser = schema.users.create(newUser);
     const encodedToken = sign(
       { _id, username },
-      import.meta.env.VITE_REACT_APP_JWT_SECRET
+      process.env.REACT_APP_JWT_SECRET
     );
     return new Response(201, {}, { createdUser, encodedToken });
   } catch (error) {
@@ -82,7 +82,7 @@ export const loginHandler = function (schema, request) {
     if (password === foundUser.password) {
       const encodedToken = sign(
         { _id: foundUser._id, username },
-        import.meta.env.VITE_REACT_APP_JWT_SECRET
+        process.env.REACT_APP_JWT_SECRET
       );
       return new Response(200, {}, { foundUser, encodedToken });
     }
