@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../auth/Auth.css";
 import { loginHandler } from "../../services/AuthServices";
 import { useContext } from "react";
@@ -15,6 +15,7 @@ function Login() {
     errorMessage: "",
   });
   const { setIsLoggedIn, setUser, setToken } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   return (
     <div className="login-page">
@@ -32,7 +33,8 @@ function Login() {
                 setErrorLogin,
                 setIsLoggedIn,
                 setUser,
-                setToken
+                setToken,
+                navigate
               );
             }}
             className="flex-column"

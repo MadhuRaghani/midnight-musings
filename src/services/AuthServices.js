@@ -13,7 +13,8 @@ export const signUpHandler = async (
   setErrorSignup,
   setIsLoggedIn,
   setUser,
-  setToken
+  setToken,
+  navigate
 ) => {
   e.preventDefault();
   try {
@@ -62,6 +63,7 @@ export const signUpHandler = async (
         setUser(response.data.createdUser);
         setToken(response.data.encodedToken);
         toast.success("Login Successful");
+        navigate("/home");
       }
     }
   } catch (e) {
@@ -92,7 +94,8 @@ export const loginHandler = async (
   setErrorLogin,
   setIsLoggedIn,
   setUser,
-  setToken
+  setToken,
+  navigate
 ) => {
   e.preventDefault();
   try {
@@ -116,7 +119,9 @@ export const loginHandler = async (
       setUser(response.data.foundUser);
       setToken(response.data.encodedToken);
 
-      // setErrorLogin({ hasError: false, errorMessage: "" });
+      navigate("/home");
+
+      setErrorLogin({ hasError: false, errorMessage: "" });
       setUsername("");
       setPassword("");
     }

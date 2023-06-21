@@ -21,6 +21,9 @@
 .primary-color {
   color: var(--primary-color);
 }
+.grey-color {
+  color: var(--grey-color);
+}
 
 .link {
   text-decoration: none;
@@ -28,6 +31,10 @@
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .flex-row {
@@ -44,9 +51,22 @@
   justify-content: center;
 }
 
+.flex-row-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .flex-column-center {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.flex-column-center-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -97,8 +117,14 @@
 .font-size-large {
   font-size: large;
 }
+.font-size-medium {
+  font-size: medium;
+}
 .font-size-smaller {
   font-size: smaller;
+}
+.font-size-small {
+  font-size: small;
 }
 
 /* margin */
@@ -161,4 +187,16 @@
 
 .width-100 {
   width: 100%;
+}
+
+.profile-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.big-icons {
+  height: 2rem;
+  width: 2rem;
 }

@@ -1,13 +1,13 @@
 import React from "react";
 import { BsGithub } from "react-icons/bs";
-import { AiOutlineHeart } from "react-icons/ai";
+import { TfiHeart } from "react-icons/tfi";
 import { RxTwitterLogo, RxLinkedinLogo } from "react-icons/rx";
 
 function Footer() {
   return (
     <footer className="footer">
       <p className="margin-block-0">
-        Made with <AiOutlineHeart className="github-icons" /> by Madhu
+        Made with <TfiHeart className="github-icons" /> by Madhu
       </p>
       <ul className="list-non-bullet unordered-list-center margin-block-xs">
         <li className="list-item-inline">

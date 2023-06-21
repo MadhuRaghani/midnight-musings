@@ -1,0 +1,20 @@
+.suggestions-bar {
+  padding: 1rem;
+}
+
+.suggestions-label {
+  align-self: flex-start;
+}
+
+.suggestion-card {
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.suggestion-card-name-image {
+  gap: 0.5rem;
+}
+
+.suggestion-card-name-div {
+  align-items: flex-start;
+}

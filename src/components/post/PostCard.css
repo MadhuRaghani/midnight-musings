@@ -1,0 +1,43 @@
+.post-card-div {
+  /* border: 2px solid brown; */
+  padding: 0.5rem;
+  margin: 1rem 0;
+  gap: 0.5rem;
+  width: 40rem;
+  box-shadow: var(--primary-color) 2px 7px 7px 0px;
+}
+
+.post-card-details-div {
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+.post-card-username-date-div {
+  gap: 0.5rem;
+}
+
+.edit-delete {
+  position: relative;
+  display: none;
+}
+
+.edit-delete.active {
+  z-index: 999;
+  display: inline;
+}
+
+.edit-delete-buttons {
+  position: absolute;
+  width: 4rem;
+  padding: 0.2rem;
+}
+
+.edit-delete-buttons:first-of-type {
+  top: 0;
+  left: 0;
+}
+
+.edit-delete-buttons:last-of-type {
+  top: 25px;
+  left: 0;
+}

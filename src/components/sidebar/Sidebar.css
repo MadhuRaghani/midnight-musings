@@ -1,0 +1,22 @@
+.navlink {
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: medium;
+}
+
+.explore-links-div {
+  gap: 0.5rem;
+}
+
+.aside-div {
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.aside-div button {
+  width: fit-content;
+  align-self: center;
+}

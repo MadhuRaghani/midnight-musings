@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import "../auth/Auth.css";
 import { useState } from "react";
@@ -22,6 +22,7 @@ function SignUp() {
     errorMessage: "",
   });
   const { setIsLoggedIn, setUser, setToken } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   return (
     <div className="login-page">
@@ -37,7 +38,8 @@ function SignUp() {
                 setErrorSignup,
                 setIsLoggedIn,
                 setUser,
-                setToken
+                setToken,
+                navigate
               );
             }}
             autoComplete="off"
