@@ -5,6 +5,7 @@ import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
 import AuthContextProvider from "./contexts/AuthContext";
+import PostsContextProvider from "./contexts/PostsContext";
 
 // Call make Server
 makeServer();
@@ -14,7 +15,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthContextProvider>
-        <App />
+        <PostsContextProvider>
+          <App />
+        </PostsContextProvider>
       </AuthContextProvider>
     </BrowserRouter>
   </React.StrictMode>

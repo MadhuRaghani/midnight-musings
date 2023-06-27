@@ -1,5 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+import { getBookMarkedPosts } from "./PostServices";
 const regexPassword =
   /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{8,14}$/;
 const regexEmail = /^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
@@ -93,6 +94,7 @@ export const loginHandler = async (
   setPassword,
   setErrorLogin,
   setIsLoggedIn,
+  setBookMarkedPosts,
   setUser,
   setToken,
   navigate
@@ -118,6 +120,8 @@ export const loginHandler = async (
       setIsLoggedIn(true);
       setUser(response.data.foundUser);
       setToken(response.data.encodedToken);
+
+      getBookMarkedPosts(setBookMarkedPosts);
 
       navigate("/home");
 

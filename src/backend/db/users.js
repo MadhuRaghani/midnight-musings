@@ -1,27 +1,65 @@
-import { v4 as uuid } from "uuid";
+// import { v4 as uuid } from "uuid";
 import { formatDate } from "../utils/authUtils";
-/**
- * User Database can be added here.
- * You can add default users of your wish with different attributes
- * */
 
 export const users = [
   {
-    _id: uuid(),
+    _id: "291153e5-6e98-4731-88ad-02c4b0bc1d4d",
     firstName: "Adarsh",
     lastName: "Balika",
-    username: "adarshbalika",
+    username: "adarsh_balika",
     password: "adarshBalika123",
-    createdAt: formatDate(),
+    bio: "Be yourself!",
+    website: "https://madhuraghani.netlify.app/",
+    bookmarks: [],
+    createdAt: "2023-01-07T10:55:06+05:30",
     updatedAt: formatDate(),
   },
   {
-    _id: uuid(),
+    _id: "619e4db9-4991-4630-85c0-901c86e48a4d",
     firstName: "Madhu",
     lastName: "Raghani",
     username: "madhu_raghani",
     password: "Madhu123*",
-    createdAt: formatDate(),
+    bio: "The ability to do what you want, when you want, with who you want, for as long as you want, is priceless.",
+    website: "https://madhuraghani.netlify.app/",
+    bookmarks: [],
+    createdAt: "2023-01-02T10:55:06+05:30",
+    updatedAt: formatDate(),
+  },
+  {
+    _id: "e5f2f79e-e9ae-469c-994d-6430a57b4f79",
+    firstName: "Winnie",
+    lastName: "The Pooh",
+    username: "winnie_the_pooh",
+    password: "Winnie123*",
+    bio: "Nothing is miserable unless you think it is so.",
+    website: "https://www.google.com/",
+    bookmarks: [],
+    createdAt: "2023-05-08T10:55:06+05:30",
+    updatedAt: formatDate(),
+  },
+  {
+    _id: "751ab3f8-a154-4ccb-92f7-cf0adff1f381",
+    firstName: "Mickey",
+    lastName: "Mouse",
+    username: "mickey_mouse",
+    password: "Mickey123*",
+    bio: "The challenge for us is that no amount of studying or open-mindedness can genuinely recreate the power of fear and uncertainty.",
+    website: "https://www.google.com/",
+    bookmarks: [],
+    createdAt: "2023-02-02T10:55:06+05:30",
+    updatedAt: formatDate(),
+  },
+  {
+    _id: "1f20072a-2ed7-41d6-b4ad-13d128dcc2dc",
+    firstName: "Minnie",
+    lastName: "Mouse",
+    username: "minnie_mouse",
+    password: "Minnie123*",
+    bio: "In life, unlike chess, the game continues after checkmate.",
+    website: "https://www.google.com/",
+    bookmarks: [],
+    createdAt: "2023-03-15T10:55:06+05:30",
     updatedAt: formatDate(),
   },
 ];

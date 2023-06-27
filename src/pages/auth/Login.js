@@ -5,6 +5,7 @@ import "../auth/Auth.css";
 import { loginHandler } from "../../services/AuthServices";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
+import { PostsContext } from "../../contexts/PostsContext";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -15,6 +16,7 @@ function Login() {
     errorMessage: "",
   });
   const { setIsLoggedIn, setUser, setToken } = useContext(AuthContext);
+  const { setBookMarkedPosts } = useContext(PostsContext);
   const navigate = useNavigate();
 
   return (
@@ -32,6 +34,7 @@ function Login() {
                 setPassword,
                 setErrorLogin,
                 setIsLoggedIn,
+                setBookMarkedPosts,
                 setUser,
                 setToken,
                 navigate
