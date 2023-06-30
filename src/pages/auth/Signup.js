@@ -187,7 +187,10 @@ function SignUp() {
         </div>
         <div>
           <p className="margin-block-xs">
-            Already Have an Account? <Link to="/login">Login?</Link>
+            Already Have an Account?{" "}
+            <Link className="primary-color font-weight-bold" to="/login">
+              Login?
+            </Link>
           </p>
         </div>
         <div className="flex-row-center">

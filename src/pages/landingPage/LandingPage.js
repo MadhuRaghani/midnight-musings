@@ -34,14 +34,14 @@ function LandingPage() {
             </p>
           </div>
           <div className="width-100">
-            <Link to="/signup">
-              <button className="button-primary width-100 font-size-large">
-                Join Now
-              </button>
-            </Link>
+            {/* <Link to="/signup"> */}
+            <button className="button-primary width-100 font-size-large">
+              Join Now
+            </button>
+            {/* </Link> */}
             <p className="primary-color font-weight-semibold">
               Already have an account?{" "}
-              <Link className="font-weight-bold" to="/login">
+              <Link className="font-weight-bold primary-color" to="/login">
                 Login
               </Link>
             </p>

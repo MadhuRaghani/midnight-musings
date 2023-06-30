@@ -7,8 +7,9 @@
 }
 
 .suggestion-card {
-  gap: 1.5rem;
-  margin: 1rem 0;
+  margin: 0.1rem 0;
+  width: 18rem;
+  padding: 0.2rem;
 }
 
 .suggestion-card-name-image {
@@ -17,4 +18,11 @@
 
 .suggestion-card-name-div {
   align-items: flex-start;
+  vertical-align: middle;
+}
+
+.suggestion-card-btn {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
 }

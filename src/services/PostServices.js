@@ -24,6 +24,7 @@ export const likeAPost = async (postId, setAllPosts, setDisableButtons) => {
     );
     if (response.status === 201) {
       setAllPosts(response.data.posts);
+      console.log(response.data.posts);
       toast.success("Liked It");
     }
   } catch (err) {
@@ -45,6 +46,7 @@ export const dislikeAPost = async (postId, setAllPosts, setDisableButtons) => {
     );
     if (response.status === 201) {
       setAllPosts(response.data.posts);
+      console.log(response.data.posts);
       toast.warning("Removed Like");
     }
   } catch (err) {
@@ -114,5 +116,16 @@ export const removeBookmarkPost = async (
     console.error(err);
   } finally {
     setDisableButtons(false);
+  }
+};
+
+export const getUserPosts = async (username, setPosts) => {
+  try {
+    const response = await axios.get("/api/posts/user/" + username);
+    if (response.status === 200) {
+      setPosts(response.data.posts);
+    }
+  } catch (err) {
+    console.error(err);
   }
 };

@@ -17,22 +17,29 @@ import {
 } from "../../services/PostServices";
 import { PostsContext } from "../../contexts/PostsContext";
 import { AuthContext } from "../../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../contexts/UserContext";
 
 function PostCard({
   postDetails: {
     _id,
-    likes: { likedBy },
+    likes: { likedBy, likeCount },
     content,
     createdAt,
-    updatedAt,
+    // updatedAt,
     username,
   },
 }) {
+  const navigate = useNavigate();
   const { user } = useContext(AuthContext);
+  const { users } = useContext(UserContext);
   const { setAllPosts, bookMarkedPosts, setBookMarkedPosts } =
     useContext(PostsContext);
   const [showEditDeleteButtons, setShowEditDeleteButtons] = useState(false);
   const [disableButtons, setDisableButtons] = useState(false);
+  const postCreatedByUser = users.find(
+    (eachUser) => eachUser.username === username
+  );
 
   const isPostLikedByCurrentUser = (likedBy) =>
     likedBy.find((currentUser) => currentUser.username === user.username);
@@ -46,7 +53,10 @@ function PostCard({
         <img
           src="https://res.cloudinary.com/djbnm7p4c/image/upload/v1687341993/1_tqef33.png"
           alt="profile"
-          className="profile-img"
+          className="profile-img cursor-pointer"
+          onClick={() => {
+            navigate("/user/" + postCreatedByUser._id);
+          }}
         />
       </div>
       <div className="flex-column post-card-details-div width-100">
@@ -99,7 +109,7 @@ function PostCard({
         <div className="flex-row justify-space-between">
           <button
             disabled={disableButtons}
-            className="like-bookmark-btn cursor-pointer"
+            className="like-bookmark-btn cursor-pointer primary-color font-size-xxlarge flex-row-center-center"
             onClick={() => {
               isPostLikedByCurrentUser(likedBy)
                 ? dislikeAPost(_id, setAllPosts, setDisableButtons)
@@ -111,6 +121,7 @@ function PostCard({
             ) : (
               <TfiHeart className="github-icons primary-color big-icons" />
             )}
+            {" " + likeCount}
           </button>
           <GoComment className="github-icons primary-color big-icons cursor-pointer" />
           <button

@@ -96,7 +96,10 @@ function Login() {
         </div>
         <div>
           <p className="margin-block-xs">
-            Don't Have an Account? <Link to="/signup">Sign Up?</Link>
+            Don't Have an Account?{" "}
+            <Link className="primary-color font-weight-bold" to="/signup">
+              Sign Up?
+            </Link>
           </p>
         </div>
         <div className="flex-row-center">

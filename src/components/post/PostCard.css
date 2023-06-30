@@ -45,4 +45,5 @@
 .like-bookmark-btn {
   background-color: var(--white-color);
   border-width: 0;
+  gap: 0.2rem;
 }

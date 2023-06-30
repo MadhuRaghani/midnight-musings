@@ -5,5 +5,6 @@
 @import url("../components/sidebar/Sidebar.css");
 @import url("../components/suggestionsBar/SuggestionBar.css");
 @import url("../components/post/PostCard.css");
+@import url("../components/profileCard/ProfileCard.css");
 
 @import url("react-toastify/dist/ReactToastify.css");

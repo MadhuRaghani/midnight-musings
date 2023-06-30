@@ -180,6 +180,7 @@
   background-color: var(--secondary-color);
   color: var(--primary-color);
   border: 0.1rem solid var(--primary-color);
+  font-family: "Comfortaa", cursive;
   border-radius: 0.2rem;
   font-size: medium;
   cursor: pointer;
@@ -199,4 +200,8 @@
 .big-icons {
   height: 2rem;
   width: 2rem;
+}
+
+.no-text-decoration {
+  text-decoration: none;
 }

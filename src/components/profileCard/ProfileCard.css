@@ -1,0 +1,33 @@
+.profile-card-div {
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.profile-card-img {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.follow-unfollow-btn {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: large;
+}
+
+.username-name-div {
+  gap: 0.2rem;
+}
+
+.profile-card-bio {
+  width: 25rem;
+}
+
+.following-unfollowing-posts-count-div {
+  gap: 1rem;
+}
+
+.follow-unfollow-posts-div {
+  gap: 0.2rem;
+}
