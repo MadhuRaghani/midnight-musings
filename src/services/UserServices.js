@@ -42,3 +42,14 @@ export const followUnfollowUser = async (
     console.error(err);
   }
 };
+
+// export const getUserPosts = async (username, setPosts) => {
+//   try {
+//     const response = await axios.get("/api/posts/user/" + username);
+//     if (response.status === 200) {
+//       setPosts(response.data.posts);
+//     }
+//   } catch (err) {
+//     console.error(err);
+//   }
+// };

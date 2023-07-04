@@ -9,16 +9,14 @@ import { GoComment } from "react-icons/go";
 import { TfiHeart } from "react-icons/tfi";
 import { FaHeart } from "react-icons/fa";
 import { useContext } from "react";
-import {
-  bookmarkAPost,
-  dislikeAPost,
-  likeAPost,
-  removeBookmarkPost,
-} from "../../services/PostServices";
 import { PostsContext } from "../../contexts/PostsContext";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
+import {
+  bookmarkRemoveBookMarkAPost,
+  likeDislikeAPost,
+} from "../../services/PostServices";
 
 function PostCard({
   postDetails: {
@@ -112,8 +110,13 @@ function PostCard({
             className="like-bookmark-btn cursor-pointer primary-color font-size-xxlarge flex-row-center-center"
             onClick={() => {
               isPostLikedByCurrentUser(likedBy)
-                ? dislikeAPost(_id, setAllPosts, setDisableButtons)
-                : likeAPost(_id, setAllPosts, setDisableButtons);
+                ? likeDislikeAPost(
+                    "dislike",
+                    _id,
+                    setAllPosts,
+                    setDisableButtons
+                  )
+                : likeDislikeAPost("like", _id, setAllPosts, setDisableButtons);
             }}
           >
             {isPostLikedByCurrentUser(likedBy) ? (
@@ -129,8 +132,18 @@ function PostCard({
             className="like-bookmark-btn cursor-pointer"
             onClick={() => {
               isPostBookMarked(bookMarkedPosts)
-                ? removeBookmarkPost(_id, setBookMarkedPosts, setDisableButtons)
-                : bookmarkAPost(_id, setBookMarkedPosts, setDisableButtons);
+                ? bookmarkRemoveBookMarkAPost(
+                    "remove-bookmark",
+                    _id,
+                    setBookMarkedPosts,
+                    setDisableButtons
+                  )
+                : bookmarkRemoveBookMarkAPost(
+                    "bookmark",
+                    _id,
+                    setBookMarkedPosts,
+                    setDisableButtons
+                  );
             }}
           >
             {isPostBookMarked(bookMarkedPosts) ? (

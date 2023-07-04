@@ -69,7 +69,9 @@ function ProfileCard({ userData }) {
       </div>
       <div className="profile-card-bio">
         {userData.bio.split("|").map((bio) => (
-          <p className="margin-block-0 font-weight-medium">{bio}</p>
+          <p className="margin-block-0 font-weight-medium" key={bio}>
+            {bio}
+          </p>
         ))}
       </div>
       <div>
