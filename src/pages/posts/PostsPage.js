@@ -4,6 +4,7 @@ import { PostsContext } from "../../contexts/PostsContext";
 import Sidebar from "../../components/sidebar/Sidebar";
 import SuggestionsBar from "../../components/suggestionsBar/SuggestionsBar";
 import PostPageCard from "../../components/post/PostPageCard";
+import PostCommentsCard from "../../components/post/PostsCommentsCard";
 
 function PostsPage() {
   const { postId } = useParams();
@@ -16,7 +17,19 @@ function PostsPage() {
       <Sidebar />
       <div>
         <PostPageCard postDetails={reqdPost} />
-        <div>TODO: Comments ARea</div>
+        {reqdPost.comments.length > 0 && (
+          <div>
+            <h2 className="primary-color text-align-left margin-block-xs">
+              Comments:{" "}
+            </h2>
+            {reqdPost.comments.map((eachComment) => (
+              <PostCommentsCard
+                commentDetails={eachComment}
+                replyingTo={reqdPost.username}
+              />
+            ))}
+          </div>
+        )}
       </div>
       <SuggestionsBar />
     </div>

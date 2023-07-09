@@ -10,6 +10,16 @@
 .post-card-page-div {
   /* padding-right: 2rem; */
   padding: 0.7rem 1rem;
+  /* box-shadow: none; */
+  /* border: 1px solid var(--primary-color); */
+}
+
+.post-card-comments-div {
+  width: 41rem;
+  box-shadow: none;
+  /* border-top: 1px solid var(--primary-color); */
+  margin: 0.5rem 0;
+  border: 1px solid var(--primary-color);
 }
 
 .post-card-details-div {
