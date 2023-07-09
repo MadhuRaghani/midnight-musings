@@ -5,6 +5,7 @@ import PostCard from "../../components/post/PostCard";
 import { useContext } from "react";
 import { PostsContext } from "../../contexts/PostsContext";
 import { AuthContext } from "../../contexts/AuthContext";
+import FiltersCard from "../../components/filtersCard/FiltersCard";
 
 function Home() {
   const { allPosts } = useContext(PostsContext);
@@ -24,7 +25,10 @@ function Home() {
           <PostCard key={eachPost.id} postDetails={eachPost} />
         ))}
       </div>
-      <SuggestionsBar />
+      <div>
+        <FiltersCard />
+        <SuggestionsBar />
+      </div>
     </div>
   );
 }

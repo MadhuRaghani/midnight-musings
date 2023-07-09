@@ -91,8 +91,16 @@
   align-self: start;
 }
 
+.align-self-center {
+  align-self: center;
+}
+
 .text-align-left {
   text-align: left;
+}
+
+.text-align-center {
+  text-align: center;
 }
 
 /* fonts */
@@ -110,9 +118,6 @@
 }
 .font-weight-bold {
   font-weight: 700;
-}
-.font-size-xxlarge {
-  font-size: x-large;
 }
 .font-size-large {
   font-size: large;
@@ -186,15 +191,28 @@
   cursor: pointer;
 }
 
+.font-size-xxlarge {
+  font-size: x-large;
+}
+
 .width-100 {
   width: 100%;
+}
+
+.width-fit-content {
+  width: fit-content;
 }
 
 .profile-img {
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  overflow: hidden;
+  /* overflow: hidden; */
+}
+
+.medium-icons {
+  height: 1.5em;
+  width: 1.5rem;
 }
 
 .big-icons {
@@ -204,4 +222,38 @@
 
 .no-text-decoration {
   text-decoration: none;
+}
+
+.gap-point-5 {
+  gap: 0.5rem;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.post-content-input {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-color: var(--white-color);
+  /* height: 5rem; */
+  padding: 0.2rem;
+  margin-top: 0;
+  border: 1px solid var(--white-color);
+  width: auto;
+}
+
+.post-content-input::-webkit-input-placeholder {
+  color: var(--white-color);
+  font-family: "Comfortaa", cursive;
+}
+
+.post-content-input:focus {
+  outline: none !important;
+  border: var(--white-color);
+  box-shadow: 0 0 10px var(--secondary-color);
 }

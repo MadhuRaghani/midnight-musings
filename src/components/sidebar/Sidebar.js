@@ -2,6 +2,7 @@ import React from "react";
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { BsRocket, BsBookmark } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
+import NewPostModal from "../post/NewPostModal";
 
 function Sidebar() {
   const getActiveStyle = ({ isActive }) => ({
@@ -38,9 +39,7 @@ function Sidebar() {
           <AiOutlineUser className="github-icons primary-color" /> Profile
         </NavLink>
       </div>
-      <button className="button-primary font-size-medium">
-        Create New Post
-      </button>
+      <NewPostModal />
     </aside>
   );
 }

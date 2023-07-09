@@ -7,9 +7,19 @@
   box-shadow: var(--primary-color) 2px 7px 7px 0px;
 }
 
+.post-card-page-div {
+  /* padding-right: 2rem; */
+  padding: 0.7rem 1rem;
+}
+
 .post-card-details-div {
   gap: 0.7rem;
   padding: 0 0.5rem;
+}
+
+.post-card-details-page-div {
+  gap: 0.7rem;
+  padding: 0;
 }
 
 .post-card-username-date-div {
@@ -32,12 +42,12 @@
   padding: 0.2rem;
 }
 
-.edit-delete-buttons:first-of-type {
+/* .edit-delete-buttons-1 {
   top: 0;
   left: 0;
-}
+} */
 
-.edit-delete-buttons:last-of-type {
+.edit-delete-buttons-2 {
   top: 25px;
   left: 0;
 }
@@ -46,4 +56,13 @@
   background-color: var(--white-color);
   border-width: 0;
   gap: 0.2rem;
+}
+
+.hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 100%;
+  background-color: var(--primary-color);
+  height: 1px;
 }

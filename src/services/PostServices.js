@@ -12,6 +12,70 @@ export const getExplorePosts = async (setAllPosts) => {
   }
 };
 
+export const createAPost = async (setAllPosts, post, setDisableButtons) => {
+  setDisableButtons(true);
+  try {
+    const response = await axios.post(
+      "/api/posts/",
+      { postData: post },
+      {
+        headers: { authorization: localStorage.getItem("authenticationToken") },
+      }
+    );
+    if (response.status === 201) {
+      setAllPosts(response.data.posts);
+      toast.success("Created A Post");
+    }
+  } catch (err) {
+    console.error(err);
+  } finally {
+    setDisableButtons(false);
+  }
+};
+
+export const deleteAPost = async (setAllPosts, postId, setDisableButtons) => {
+  setDisableButtons(true);
+  try {
+    const response = await axios.delete("/api/posts/" + postId, {
+      headers: { authorization: localStorage.getItem("authenticationToken") },
+    });
+    if (response.status === 201) {
+      setAllPosts(response.data.posts);
+      toast.warning("Deleted A Post");
+    }
+  } catch (err) {
+    console.error(err);
+  } finally {
+    setDisableButtons(false);
+  }
+};
+
+export const editAPost = async (
+  setAllPosts,
+  postId,
+  postData,
+  setDisableButtons
+) => {
+  setDisableButtons(true);
+  try {
+    const response = await axios.post(
+      "/api/posts/edit/" + postId,
+      { postData },
+      {
+        headers: { authorization: localStorage.getItem("authenticationToken") },
+      }
+    );
+    if (response.status === 201) {
+      setAllPosts(response.data.posts);
+      toast.warning("Edited A Post");
+    }
+  } catch (err) {
+    console.error(err);
+  } finally {
+    setDisableButtons(false);
+  }
+};
+
 export const likeDislikeAPost = async (
   likeDislikeFlag,
   postId,

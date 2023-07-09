@@ -15,6 +15,7 @@ import Bookmark from "./pages/bookmark/Bookmark";
 import Profile from "./pages/profile/Profile";
 import UsersProfile from "./pages/users/UsersProfile";
 import "./App.css";
+import PostsPage from "./pages/posts/PostsPage";
 
 function App() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -64,6 +65,14 @@ function App() {
           element={
             <PrivateRoute>
               <UsersProfile />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/posts/:postId"
+          element={
+            <PrivateRoute>
+              <PostsPage />
             </PrivateRoute>
           }
         />

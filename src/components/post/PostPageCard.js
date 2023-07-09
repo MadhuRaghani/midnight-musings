@@ -6,7 +6,6 @@ import {
   BsShare,
   BsThreeDots,
 } from "react-icons/bs";
-import { GoComment } from "react-icons/go";
 import { TfiHeart } from "react-icons/tfi";
 import { FaHeart } from "react-icons/fa";
 import { PostsContext } from "../../contexts/PostsContext";
@@ -20,13 +19,12 @@ import {
 import { toast } from "react-toastify";
 import NewPostModal from "./NewPostModal";
 
-function PostCard({
+function PostPageCard({
   postDetails: {
     _id,
     likes: { likedBy, likeCount },
     content,
     createdAt,
-    // updatedAt,
     username,
   },
 }) {
@@ -48,8 +46,8 @@ function PostCard({
     bookMarkedPosts.find((bookMarkId) => bookMarkId === _id);
 
   return (
-    <div className="post-card-div flex-row">
-      <div>
+    <div className="post-card-div post-card-page-div font-size-large flex-column">
+      <div className="flex-row gap-point-5">
         <img
           src={postCreatedByUser.profile_pic}
           alt="profile"
@@ -58,11 +56,12 @@ function PostCard({
             navigate("/user/" + postCreatedByUser._id);
           }}
         />
-      </div>
-      <div className="flex-column post-card-details-div width-100">
-        <div className="flex-row justify-space-between">
+        <div
+          className="flex-row justify-space-between"
+          style={{ width: "98%" }}
+        >
           <div
-            className="flex-row post-card-username-date-div cursor-pointer"
+            className="flex-column post-card-username-date-div cursor-pointer"
             onClick={() => {
               navigate("/user/" + postCreatedByUser._id);
             }}
@@ -73,23 +72,15 @@ function PostCard({
                 .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
                 .join(" ")}
             </p>
-            <p className="margin-block-0 grey-color font-size-small">
+            <p className="margin-block-0 grey-color font-size-medium text-align-left">
               @{username}
-            </p>
-            <p className="margin-block-0">•</p>
-            <p className="margin-block-0">
-              {`${new Date(createdAt)
-                .toDateString()
-                .split(" ")
-                .slice(1, 4)
-                .join(" ")}`}
             </p>
           </div>
           {username === user.username && (
             <div>
               <div>
                 <BsThreeDots
-                  className="github-icons primary-color cursor-pointer font-size-large"
+                  className="github-icons primary-color cursor-pointer medium-icons font-size-large"
                   onClick={() => {
                     setShowEditDeleteButtons((prev) => !prev);
                   }}
@@ -126,6 +117,8 @@ function PostCard({
             </div>
           )}
         </div>
+      </div>
+      <div className="flex-column post-card-details-page-div width-100">
         <div>
           <p
             className="margin-block-0 cursor-pointer"
@@ -137,6 +130,21 @@ function PostCard({
             {content}
           </p>
         </div>
+        <p className="margin-block-0 text-align-left grey-color font-size-medium">
+          {`${new Date(createdAt)
+            .toTimeString()
+            .split(" ")[0]
+            .split(":")
+            .slice(0, 2)
+            .join(":")} · ${new Date(createdAt)
+            .toDateString()
+            .split(" ")
+            .slice(1, 4)
+            .join(" ")}`}
+        </p>
+        <hr className="margin-block-0 hr" />
+        <p className="margin-block-0 text-align-left font-weight-medium">{`${likeCount} likes`}</p>
+        <hr className="margin-block-0 hr" />
         <div className="flex-row justify-space-between">
           <button
             disabled={disableButtons}
@@ -157,15 +165,7 @@ function PostCard({
             ) : (
               <TfiHeart className="github-icons primary-color big-icons" />
             )}
-            {" " + likeCount}
           </button>
-          <GoComment
-            className="github-icons primary-color big-icons cursor-pointer"
-            onClick={(e) => {
-              navigate("/posts/" + _id);
-              e.stopPropagation();
-            }}
-          />
           <button
             disabled={disableButtons}
             className="like-bookmark-btn cursor-pointer"
@@ -206,4 +206,4 @@ function PostCard({
   );
 }
 
-export default PostCard;
+export default PostPageCard;

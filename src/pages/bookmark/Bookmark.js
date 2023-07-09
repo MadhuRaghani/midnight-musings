@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AiOutlineArrowRight } from "react-icons/ai";
 import Sidebar from "../../components/sidebar/Sidebar";
 import SuggestionsBar from "../../components/suggestionsBar/SuggestionsBar";
 import PostCard from "../../components/post/PostCard";
@@ -11,14 +13,28 @@ function Bookmark() {
     bookMarkedPosts.includes(_id)
   );
 
+  const navigate = useNavigate();
+
   return (
     <div className="flex-row-center justify-space-evenly">
       <Sidebar />
-      <div>
-        {bookMarkedPostsDetails.map((eachPost) => (
-          <PostCard key={eachPost.id} postDetails={eachPost} />
-        ))}
-      </div>
+      {bookMarkedPostsDetails.length === 0 ? (
+        <div
+          className="flex-row-center-center primary-color cursor-pointer"
+          onClick={() => {
+            navigate("/home");
+          }}
+        >
+          Start Bookmarking Posts <AiOutlineArrowRight />
+        </div>
+      ) : (
+        <div>
+          {bookMarkedPostsDetails.map((eachPost) => (
+            <PostCard key={eachPost.id} postDetails={eachPost} />
+          ))}
+        </div>
+      )}
+
       <SuggestionsBar />
     </div>
   );
