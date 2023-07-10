@@ -8,7 +8,7 @@ function Explore() {
   const { allPosts } = useContext(PostsContext);
 
   return (
-    <div className="flex-row-center justify-space-evenly">
+    <div className="flex-row-center justify-space-evenly flex-grow-1">
       <Sidebar />
       <div>
         {allPosts.map((eachPost) => (

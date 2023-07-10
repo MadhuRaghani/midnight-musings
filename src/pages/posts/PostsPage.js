@@ -13,7 +13,7 @@ function PostsPage() {
   const reqdPost = allPosts.find(({ _id }) => _id === postId);
 
   return (
-    <div className="flex-row-center justify-space-evenly">
+    <div className="flex-row-center justify-space-evenly flex-grow-1">
       <Sidebar />
       <div>
         <PostPageCard postDetails={reqdPost} />

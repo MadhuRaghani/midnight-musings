@@ -13,7 +13,7 @@ function UsersProfile() {
   const user = users.find(({ _id }) => _id === userId);
 
   return (
-    <div className="flex-row-center justify-space-evenly">
+    <div className="flex-row-center justify-space-evenly flex-grow-1">
       <Sidebar />
       <ProfileCard userData={user} />
       <SuggestionsBar />

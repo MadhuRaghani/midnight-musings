@@ -20,7 +20,7 @@ function Login() {
   const navigate = useNavigate();
 
   return (
-    <div className="login-page">
+    <div className="login-page flex-grow-1">
       <div className="login-container">
         <h2 className="cursive-font margin-block-xs">Login</h2>
         <div className="flex-row-center">

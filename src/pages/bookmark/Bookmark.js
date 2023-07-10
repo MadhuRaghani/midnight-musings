@@ -16,7 +16,7 @@ function Bookmark() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex-row-center justify-space-evenly">
+    <div className="flex-row-center justify-space-evenly flex-grow-1">
       <Sidebar />
       {bookMarkedPostsDetails.length === 0 ? (
         <div

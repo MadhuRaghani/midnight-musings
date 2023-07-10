@@ -25,7 +25,7 @@ function SignUp() {
   const navigate = useNavigate();
 
   return (
-    <div className="login-page">
+    <div className="login-page flex-grow-1">
       <div className="login-container">
         <h2 className="cursive-font margin-block-xs">Sign Up</h2>
         <div className="flex-row-center">
