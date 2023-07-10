@@ -26,6 +26,7 @@ function PostsPage() {
               <PostCommentsCard
                 commentDetails={eachComment}
                 replyingTo={reqdPost.username}
+                key={eachComment._id}
               />
             ))}
           </div>

@@ -74,9 +74,7 @@ function PostCommentsCard({
           <BsShare
             className="github-icons primary-color big-icons cursor-pointer"
             onClick={() => {
-              navigator.clipboard.writeText(
-                "https://madhuraghani-midnight-musings.netlify.app/posts/" + _id
-              );
+              navigator.clipboard.writeText("Comments Id: " + _id);
               toast.success("Copied To Clipboard");
             }}
           />

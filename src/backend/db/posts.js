@@ -4,8 +4,7 @@ import { formatDate } from "../utils/authUtils";
 export const posts = [
   {
     _id: "7169ce76-decd-416e-a9cc-3f847d81969b",
-    content:
-      "People are like stained glass windows: They sparkle and shine when the sun’s out, but when the darkness sets in, their true beauty is revealed only if there is light within.",
+    content: "Happiness is a how, not a what; a talent, not an object.",
     likes: {
       likeCount: 5,
       likedBy: [],
@@ -29,7 +28,8 @@ export const posts = [
   },
   {
     _id: "44b77fa1-fb07-4be4-9a8a-3c8647e54d91",
-    content: "Happiness is a how, not a what; a talent, not an object.",
+    content:
+      "People are like stained glass windows: They sparkle and shine when the sun’s out, but when the darkness sets in, their true beauty is revealed only if there is light within.",
     likes: {
       likeCount: 0,
       likedBy: [],

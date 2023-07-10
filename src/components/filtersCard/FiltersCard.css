@@ -1,0 +1,26 @@
+.filters-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.filters-dropdown-content {
+  position: absolute;
+  min-width: 120px;
+  right: 0;
+  z-index: 1;
+}
+
+.filters-dropdown-content p {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-weight: 400;
+  display: block;
+  padding: 0.2rem 0;
+  margin: 0.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.padding-1 {
+  padding: 1rem 0 0 0;
+}

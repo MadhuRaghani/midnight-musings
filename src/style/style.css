@@ -8,5 +8,6 @@
 @import url("../components/profileCard/ProfileCard.css");
 @import url("../components/profileCard/ProfileModal.css");
 @import url("../components/profileCard/AvatarModal.css");
+@import url("../components/filtersCard/FiltersCard.css");
 
 @import url("react-toastify/dist/ReactToastify.css");
