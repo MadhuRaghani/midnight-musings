@@ -151,3 +151,21 @@ export const logoutHandler = (setUser, setToken, setIsLoggedIn) => {
   localStorage.removeItem("authenticationToken");
   toast.success("Logged Off Successfully");
 };
+
+export const updateUser = async (setUser, updatedUserData) => {
+  try {
+    const response = await axios.post(
+      "/api/users/edit",
+      { userData: updatedUserData },
+      {
+        headers: { authorization: localStorage.getItem("authenticationToken") },
+      }
+    );
+    if (response.status === 201) {
+      setUser(response.data.user);
+      toast.success("Updated Profile");
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};

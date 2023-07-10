@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useContext } from "react";
-import { RxCrossCircled } from "react-icons/rx";
+import { MdHighlightOff } from "react-icons/md";
 import Modal from "react-modal";
 import { AuthContext } from "../../contexts/AuthContext";
 import { formatDate } from "../../backend/utils/authUtils";
@@ -31,8 +31,6 @@ function NewPostModal({ editOrNew, postId, postContent }) {
   const openModal = () => {
     setIsOpen(true);
   };
-
-  console.log();
 
   const saveHandler = () => {
     if (newPost.content?.length > 0) {
@@ -103,7 +101,7 @@ function NewPostModal({ editOrNew, postId, postContent }) {
       <Modal isOpen={isOpen} style={customStyles}>
         <div className="flex-column">
           <div>
-            <RxCrossCircled
+            <MdHighlightOff
               style={{ padding: "0" }}
               className="github-icons big-icons cursor-pointer"
               onClick={() => {

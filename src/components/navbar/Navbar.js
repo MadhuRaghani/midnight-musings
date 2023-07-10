@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -6,9 +6,9 @@ function Navbar() {
       <Link className="link app-name" to="/">
         Midnight Musings
       </Link>
-      <NavLink to="/mockman" className="button-primary">
+      {/* <NavLink to="/mockman" className="button-primary">
         Mockman
-      </NavLink>
+      </NavLink> */}
     </nav>
   );
 }

@@ -4,11 +4,15 @@ import { PostsContext } from "../../contexts/PostsContext";
 import PostCard from "../post/PostCard";
 import { UserContext } from "../../contexts/UserContext";
 import { followUnfollowUser } from "../../services/UserServices";
+import { useState } from "react";
+import ProfileModal from "./ProfileModal";
 
 function ProfileCard({ userData }) {
   const { user, setUser } = useContext(AuthContext);
   const { users, setUsers } = useContext(UserContext);
   const { allPosts } = useContext(PostsContext);
+
+  const [editUserProfileModal, setEditUserProfileModal] = useState(false);
 
   const posts = allPosts.filter(
     ({ username }) => username === userData.username
@@ -32,9 +36,22 @@ function ProfileCard({ userData }) {
       </div>
       <div>
         {isCurrentUser ? (
-          <button className="follow-unfollow-btn cursor-pointer">
-            Edit Profile
-          </button>
+          <>
+            <button
+              className="follow-unfollow-btn cursor-pointer"
+              onClick={() => {
+                setEditUserProfileModal(true);
+              }}
+            >
+              Edit Profile
+            </button>
+            {editUserProfileModal && (
+              <ProfileModal
+                editUserProfileModal={editUserProfileModal}
+                setEditUserProfileModal={setEditUserProfileModal}
+              />
+            )}
+          </>
         ) : isFollowingThisUser ? (
           <button
             className="button-secondary follow-unfollow-btn"

@@ -6,5 +6,7 @@
 @import url("../components/suggestionsBar/SuggestionBar.css");
 @import url("../components/post/PostCard.css");
 @import url("../components/profileCard/ProfileCard.css");
+@import url("../components/profileCard/ProfileModal.css");
+@import url("../components/profileCard/AvatarModal.css");
 
 @import url("react-toastify/dist/ReactToastify.css");
