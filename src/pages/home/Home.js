@@ -32,7 +32,7 @@ function Home() {
             )
         : [...userfeedPosts].sort(
             ({ createdAt: createdAt1 }, { createdAt: createdAt2 }) =>
-              Date(createdAt2) - Date(createdAt1)
+              new Date(createdAt2) - new Date(createdAt1)
           )
       : userfeedPosts;
 
