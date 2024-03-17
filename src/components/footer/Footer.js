@@ -13,7 +13,7 @@ function Footer() {
         <li className="list-item-inline">
           <a
             target="_blank"
-            href="https://github.com/RaghaniMadhu"
+            href="https://github.com/MadhuRaghani"
             rel="noreferrer"
           >
             <BsGithub className="footer-icons github-icons" />
@@ -31,7 +31,7 @@ function Footer() {
         <li className="list-item-inline">
           <a
             target="_blank"
-            href="https://www.linkedin.com/in/madhu-raghani-28541a132/"
+            href="https://www.linkedin.com/in/madhuraghani/"
             rel="noreferrer"
           >
             <RxLinkedinLogo className="footer-icons github-icons" />
